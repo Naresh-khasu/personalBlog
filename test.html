@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<head>
+    <style>
+        .overlay {
+            height: 0%;
+            width: 100%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow-y: hidden;
+            transition: 0.5s;
+        }
+        
+        .overlay-content {
+            position: relative;
+            top: 25%;
+            width: 100%;
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .overlay a:hover,
+        .overlay a:focus {
+            color: #f1f1f1;
+        }
+        
+        .overlay .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 45%;
+            font-size: 60px;
+        }
+        
+        @media screen and (max-width:450px) {
+            .overlay {
+                overflow-y: auto;
+            }
+            .overlay a {
+                font-size: 20px;
+            }
+            .overlay .closebtn {
+                font-size: 40px;
+                top: 15px;
+                right: 35px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
+        <div class="overlay-content">
+            <ul class="mainmenu">
+                <li class="drop"><a href="index.php">View website</a>
+                </li>
+
+                <li class="drop"><a href="texteditor/editor.php">Add new post</a>
+                </li>
+                <li class="drop"><a href="add-new-portfolio.php">Add new portfolio</a>
+                </li>
+                <li class="drop">
+                    <a href="cms.php?logout='1'">
+                        <?php echo $_SESSION['email']; ?> (LOGOUT)</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <span style="font-size: 30px; cursor:pointer" onclick="openNav()">&#9776;</span>
+</body>
+<script>
+    function openNav() {
+        document.getElementById("myNav").style.height = "100%";
+    }
+
+    function closeNav() {
+        document.getElementById("myNav").style.height = "0%";
+    }
+</script>
+
+</html>
+
+/*
+<div class="pos-f-t">
+    <div class="collapse" id="navbarToggleExternalContent">
+        <div class="bg-dark p-4">
+
+            <span class="text-muted">
+      <div class="mainmenu__wrap">
+                                <nav class="mainmenu__nav">
+                                    <ul class="mainmenu">
+                                        <li class="drop"><a href="index.php">View website</a>
+                                        </li>
+                                       
+                                        <li class="drop"><a href="texteditor/editor.php">Add new post</a>
+                                        </li>
+                                        <li class="drop"><a href="add-new-portfolio.php">Add new portfolio</a>
+                                        </li>
+                                        <li class="drop"><a  href="cms.php?logout='1'">
+                                            <?php echo $_SESSION['email']; ?> (LOGOUT)</a>
+                                        </li>
+
+                                    </ul>
+                                </nav>
+                            </div>
+      </span>
+        </div>
+    </div>
+    <nav class="navbar navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    </nav>
+</div>*/

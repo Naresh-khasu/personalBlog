@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script src="https://kit.fontawesome.com/yourcode.js"></script>
+    <style>
+        * {
+            list-style: none;
+            text-decoration: none;
+        }
+        
+        nav {
+            background: #0082e6;
+            height: 80px;
+            width: 100%;
+        }
+        
+        label .logo {
+            color: white;
+            font-size: 35;
+            line-height: 80px;
+            padding: 0 100px;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            float: right;
+            margin-right: 20px;
+        }
+        
+        nav ul li {
+            display: inline-block;
+            line-height: 80px;
+            margin: 0 5px;
+        }
+        
+        nav ul li a {
+            color: white;
+            font-size: 17px;
+            text-transform: uppercase;
+            padding: 7px 13px;
+            border-radius: 3px;
+        }
+        
+        a.active,
+        a:hover {
+            background: #1b9bff;
+            transition: .5s;
+        }
+        
+        .checkbtn {
+            font-size: 30px;
+            color: white;
+            float: right;
+            line-height: 80px;
+            margin-right: 40px;
+            cursor: pointer;
+        }
+        
+        #check {
+            display: none;
+        }
+        
+        @media(max-width: 952px) {
+            label.logo {
+                font-size: 30px;
+                padding-left: 50px;
+            }
+            nav ul li a {
+                font-size: 16px;
+            }
+        }
+        
+        @media(max-width: 858px) {
+            .checkbtn {
+                display: block;
+            }
+            ul {
+                position: fixed;
+                width: 100%;
+                height: 100vh;
+                background: #2c3e50;
+                top: 80px;
+                left: -100%;
+                text-align: center;
+                transition: all .5s;
+            }
+            nav ul li {
+                display: block;
+                margin: 50px 0;
+                line-height: 30px;
+            }
+            nav ul li a {
+                font-size: 20px;
+            }
+            a:hover,
+            a:active {
+                background: none;
+                color: #0082e6;
+            }
+            #check:checked~ul {
+                left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo">travelBlog</label>
+        <ul>
+            <li><a class="active">home</a></li>
+            <li><a>about</a></li>
+            <li><a>contact</a></li>
+            <li><a>blog</a></li>
+        </ul>
+    </nav>
+</body>
+
+</html>
